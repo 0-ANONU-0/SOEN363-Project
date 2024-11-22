@@ -333,3 +333,24 @@ for s in cursor.fetchall():
     )
 
 print("Done Adding Part/Full time jobs to table")
+
+skills = [
+    "Communication", "Teamwork", "Problem-solving", "Time management", "Adaptability",
+    "Critical thinking", "Leadership", "Conflict resolution", "Creativity", "Decision-making",
+    "Project management", "Customer service", "Interpersonal skills", "Attention to detail",
+    "Organization", "Analytical skills", "Negotiation", "Networking", "Collaboration",
+    "Strategic thinking", "Presentation skills", "Written communication", "Research skills",
+    "Emotional intelligence", "Computer literacy", "Data analysis", "Coding/programming",
+    "Budget management", "Marketing", "Sales", "Technical writing", "Public speaking",
+    "Data visualization", "Microsoft Office", "Social media management", "Search engine optimization (SEO)",
+    "Content creation", "Database management", "Cloud computing", "Graphic design",
+    "UX/UI design", "Machine learning", "Cybersecurity", "Languages (e.g., Spanish, French)",
+    "Event planning", "Training and development", "Financial analysis", "Agile methodology",
+    "Risk management", "Human resources"
+]
+
+for i in range(1,25000):
+    x = random.randint(1, 25000)
+    y = random.randint(0, 49)
+    cursor.execute("INSERT INTO jobskill VALUES (%s, %s, %s)", (i, x, skills[y]))
+print("Done")
